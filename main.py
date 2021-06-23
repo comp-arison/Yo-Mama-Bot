@@ -1,6 +1,6 @@
 '''
 Yo Mama Bot ©2021 Nathan Boehm
-Special thanks to nobody. I did this all myself.
+Special thanks to yo mama lmao
 '''
 import discord
 import os
