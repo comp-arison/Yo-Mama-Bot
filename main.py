@@ -31,6 +31,10 @@ async def on_message(message):
     await message.channel.send("Yo mama thinks " + " ".join(message.content.split()[2:]))
   elif message.content.lower().startswith("i wonder "):
     await message.channel.send("Yo mama wonders " + " ".join(message.content.split()[2:]))
+  elif message.content.lower().startswith("i have "):
+    await message.channel.send("Yo mama has " + " ".join(message.content.split()[2:]))
+  elif message.content.lower().startswith("i need "):
+    await message.channel.send("Yo mama needs " + " ".join(message.content.split()[2:]))
   elif message.content.lower().startswith("i do "):
     await message.channel.send("Yo mama does " + " ".join(message.content.split()[2:]))
   elif message.content.lower().startswith("i am "):
@@ -113,7 +117,8 @@ async def on_message(message):
     await message.channel.send("Yo mama wears " + " ".join(message.content.split()[2:]))
   elif message.content.lower() == "fat":
     await message.channel.send(file=discord.File('Fat.png'))
-  #elif f'<@!{client.user.id}>' in message.content:
+  elif message.content.lower() == "sans":
+    await message.channel.send(file=discord.File('Sans.mov'))
   elif client.user in message.mentions:
     await message.channel.send(jokes[rand.randint(0, len(jokes) - 1)])
   elif message.content.lower() == "no mama" or message.content.lower() == "no mama.":
@@ -132,6 +137,8 @@ async def on_message(message):
     await message.channel.send("Yo mama's a dead chat.")
   elif messagenopunc.lower() == "unused server" or messagenopunc.lower() == "unused server xd":
     await message.channel.send('''You think you're slick? You think you can avoid me? Think again fucker. I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the entire US armed forces. You are nothing to me but just another target. I will wipe you the fuck out with precision the likes of which has never been seen before on this Earth, mark my fucking words. You think you can get away with saying that shit to me over the Internet? Think again, fucker. As we speak I am contacting my secret network of spies across the USA and your IP is being traced right now so you better prepare for the storm, maggot. The storm that wipes out the pathetic little thing you call your life. You're fucking dead, kid. I can be anywhere, anytime, and I can kill you in over seven hundred ways, and that's just with my bare hands. Not only am I extensively trained in unarmed combat, but I have access to the entire arsenal of the United States Marine Corps and I will use it to its full extent to wipe your miserable ass off the face of the continent, you little shit. If only you could have known what unholy retribution your little "clever" comment was about to bring down upon you, maybe you would have held your fucking tongue. But you couldn't, you didn't, and now you're paying the price, you goddamn idiot. I will shit fury all over you and you will drown in it. You're fucking dead, kiddo.''')
+  elif message.guild.id == 888219323682930729 and ("kel" in messagenopunc.lower() or "omori" in messagenopunc.lower() or "alcohol" in messagenopunc.lower()): #this is only used for a specific server i'm in
+    await message.delete()
 
 keep_alive()
 client.run(os.getenv("TOKEN"))
